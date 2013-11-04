@@ -6,7 +6,7 @@ This gallery connects via the Flickr API (using oauth) and retreives Photosets
 and photos on the fly.  
 
 ###Installation:  
-    git clone git://github.com/manxam/fnj-gallery-V2.git
+    git clone git://github.com/manxam/fnj-gallery-V3.git
     npm install
 
 ###Configuration:  
