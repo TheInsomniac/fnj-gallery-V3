@@ -1,0 +1,35 @@
+!!! 5
+html(lang='en')
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(charset='utf-8')
+    //-meta(description='#{meta}')
+    block meta
+    title #{title}
+    link(href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='css/site.css')
+    link(rel='stylesheet', type='text/css', href='css/swipebox.css')
+    link(rel='stylesheet', type='text/css', href='css/gallery.css')
+    block head
+  body
+    .row-fluid
+      #hideLeft.span12
+        .navbar.navbar-top
+          .navbar-inner
+            .brand #{title}
+            block navbar
+    .row-fluid#page
+      block content
+    #slideout
+      #slideclick
+      #slidecontent
+        h3 Albums
+        ul.unstyled
+          !{getAlbums}
+    script(src='//code.jquery.com/jquery-1.10.2.min.js')
+    script(src='js/slideout.min.js')
+    script(type='text/javascript').
+      function loadAlbum(album, title) {
+        $("#page").load("/gallery?album=" + album + "&title=" + title);
+      }
+    block script

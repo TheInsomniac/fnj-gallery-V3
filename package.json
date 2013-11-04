@@ -1,0 +1,33 @@
+{
+  "name": "fnj-gallery-V3",
+  "version": "3.0.0",
+  "description": "A node.js based single page Flickr gallery using Jade/Stylus",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~3.3.5",
+    "flickr-with-uploads" : "~1.0.4",
+    "jade": "~0.34.1",
+    "stylus": "~0.36.1",
+    "uglifyjs-middleware": "~0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/manxam/fnj-gallery-V3"
+  },
+  "keywords": [
+    "flickr",
+    "nodejs",
+    "jade",
+    "stylus",
+    "jQuery"
+  ],
+  "author": "manxam",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/manxam/fnj-gallery-V3/issues"
+  }
+}

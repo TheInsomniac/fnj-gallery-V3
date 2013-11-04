@@ -1,0 +1,6 @@
+{
+  "api_key":"YourAPIKey",
+  "api_secret":"YourAPISecret",
+  "oauth_token":"YourOAUTHToken",
+  "oauth_secret":"YourOAUTHSecret"
+}
