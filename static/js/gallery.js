@@ -1,5 +1,5 @@
 //if (data.length != 0) {
-$(function(){
+function loadGallery(data){
 
 	// Global variables that hold state
 
@@ -304,4 +304,4 @@ $(function(){
 		return page > 0;
 	}
 
-});
+}

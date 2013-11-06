@@ -2,10 +2,6 @@
   #loading
   #gallery
 script(type='text/javascript').
-  //document.getElementsByTagName('title')[0].innerHTML = '#{galleryTitle}';
   document.title = '#{galleryTitle}';
-  document.getElementsByClassName('brand')[0].innerHTML =  '&#8618; #{galleryTitle}';
-  var data = !{data};
-script(src='js/jquery.loadImage.min.js')
-script(src='js/jquery.swipebox.min.js')
-script(src='js/gallery.min.js')
+  document.getElementsByClassName('brand')[0].innerHTML = '&#8618; #{galleryTitle}';
+  loadGallery(!{data});

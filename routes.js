@@ -42,27 +42,23 @@ exports.main = function() {
     if (!req.query.album) {
       res.json(404, {"Error": "No Album Specified!",
                 "Usage": "?album=ALBUM_ID"});
+    } else if (req.xhr) {
+      var id = req.query.album;
+      flickr.getPhotoSetPhotos(id,
+        function retrievePhotosets() {
+          var data = [];
+          var i = -1,
+              ilen = this.length;
+          while (++i < ilen) {
+            data.push({large:this[i].large, thumb:this[i].thumb});
+          }
+          res.render("gallery", {
+            galleryTitle : req.query.title,
+            data : JSON.stringify(data)
+          });
+        });
+    } else {
+      res.json(404, {"Error": "Function not Supported"});
     }
-    var id = req.query.album;
-    flickr.getPhotoSetPhotos(id,
-      function retrievePhotosets() {
-        var data = [];
-        var i = -1,
-            ilen = this.length;
-        while (++i < ilen) {
-          data.push({large:this[i].large, thumb:this[i].thumb});
-        }
-        if (config.use === "collections") {
-          res.render("gallery", {
-            galleryTitle : req.query.title,
-            data : JSON.stringify(data)
-          });
-        } else {
-          res.render("gallery", {
-            galleryTitle : req.query.title,
-            data : JSON.stringify(data)
-          });
-        }
-      });
   }); // End "/gallery"
 }; // End main
