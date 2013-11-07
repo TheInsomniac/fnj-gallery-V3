@@ -4,14 +4,17 @@ var flickr = require(__dirname + "/lib/flickr");
 exports.main = function() {
   "use strict";
 
-//  app.get("/*", function(req, res, next){
+  app.get("/*", function(req, res, next){
+    res.setHeader("cache-control", "private");
+    res.setHeader("Expires", "Thu, 15 Apr 2020 20:00:00 GMT");
+    res.setHeader("ETag", "11062013");
     //res.setHeader("cache-control", "no-store, no-cache, must-revalidate");
     //res.setHeader("pragma", "no-store, no-cache");
     //res.setHeader("Expires", "-");
     //res.setHeader("ETag", Date.now());
     //res.setHeader("Last-Modified", (new Date()).toUTCString());
-//    next();
-//});
+    next();
+  });
 
 // exposes "/"
   app.get("/", function renderIndex(req, res) {
@@ -20,14 +23,14 @@ exports.main = function() {
         title : config.title,
         quote : config.quote,
         author : config.quoteAuthor,
-        getAlbums : app.get("collections")
+        getAlbums : app.locals.collections
       });
     } else {
       res.render("index", {
         title : config.title,
         quote : config.quote,
         author : config.quoteAuthor,
-        getAlbums : app.get("photosets")
+        getAlbums : app.locals.photosets
       });
     }
     //if (req.session.lastPage) {

@@ -42,7 +42,7 @@ exports.main = function() {
         collections.push(item.join(""));
       }
     }
-    app.set("collections", collections.join(""));
+    app.locals.collections = collections.join("");
     console.log("[Collections Obtained]");
   });
 
@@ -58,7 +58,7 @@ exports.main = function() {
         this[i].title.replace(/_/gi, " ") +
         "</a></li>");
     }
-    app.set("photosets", photosets.join(""));
+    app.locals.photosets = photosets.join("");
     console.log("[Photosets Obtained]");
   });
 }; // end Main
