@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/manxam/fnj-gallery-V3"
+    "url": "http://github.com/TheInsomniac/fnj-gallery-V3"
   },
   "keywords": [
     "flickr",
@@ -25,9 +25,9 @@
     "stylus",
     "jQuery"
   ],
-  "author": "manxam",
+  "author": "TheInsomniac",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/manxam/fnj-gallery-V3/issues"
+    "url": "https://github.com/TheInsomniac/fnj-gallery-V3/issues"
   }
 }
