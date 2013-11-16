@@ -81,7 +81,8 @@ app.use(uglifyJS(__dirname + "/static", {
 ));
 
 // expose /static for css and js files
-app.use(express.static(__dirname + "/static"));
+app.use(express.static(__dirname + "/static", { maxAge: 6000000 }));
+app.use(express.favicon(__dirname + "/static/css/img/favicon.ico", { maxAge: 6000000 }));
 
 // retrieves Collections or Photosets for slideout and
 // caches their results
