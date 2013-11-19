@@ -56,12 +56,14 @@ exports.main = function() {
             data.push({large:this[i].large, thumb:this[i].thumb});
           }
           res.render("gallery", {
-            galleryTitle : req.query.title,
+            galleryTitle : req.query.title || "Gallery",
             data : JSON.stringify(data)
           });
         });
     } else {
-      res.json(404, {"Error": "Function not Supported"});
-    }
+      res.redirect("/");
+    }// else {
+    //  res.json(404, {"Error": "Function not Supported"});
+    //}
   }); // End "/gallery"
 }; // End main

@@ -17,12 +17,10 @@ exports.main = function() {
           xlen = this[i].albums.length;
       while (++x < xlen) {
         item.push("<li>" +
-          "<a class=\"item\" href=\"javascript:void(0)\" " +
-          "onclick=" +
-          "\"loadAlbum('" +
+          "<a class=\"item\" href=\"/gallery?album=" +
           this[i].albums[x].id +
-          "','" +
-          this[i].albums[x].title.replace(/_/gi, "%20") + "')\">" +
+          "&amp;title=" +
+          this[i].albums[x].title.replace(/_/gi, "%20") + "\">" +
           "<i class=\"icon-camera icon-white\"></i>&nbsp;" +
           this[i].albums[x].title.replace(/_/gi, " ") +
           "</a></li>"

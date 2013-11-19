@@ -32,7 +32,15 @@ html(lang='en')
     //-script(src='js/jquery.swipebox.min.js')
     //-script(src='js/gallery.min.js')
     script(type='text/javascript').
-      function loadAlbum(album, title) {
-        $("#page").load("/gallery?album=" + album + "&title=" + title);
-      }
+      $("body").on("click", "a", function(event) {
+        event.preventDefault();
+        history.pushState({}, '', event.target.href);
+        $("#page").load(event.target.href);
+        return false;
+      });
+      $(window).on("popstate", function(event) {
+        if (event.originalEvent.state !== null) {
+          $("#page").load(location.href);
+        }
+      });
     block script
