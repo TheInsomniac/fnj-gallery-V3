@@ -32,7 +32,7 @@ html(lang='en')
     //-script(src='js/jquery.swipebox.min.js')
     //-script(src='js/gallery.min.js')
     script(type='text/javascript').
-      $("body").on("click", "a", function(event) {
+      $("#slideout").on("click", "a", function(event) {
         event.preventDefault();
         history.pushState({}, '', event.target.href);
         $("#page").load(event.target.href);
