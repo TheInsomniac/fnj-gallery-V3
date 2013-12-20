@@ -4,7 +4,7 @@ config = require(__dirname + "/config");
 
 var fs = require("fs"),
     host = config.host,
-    port = config.port;
+    port = process.env.PORT || config.port;
 
 // Production or Development mode?
 process.env.NODE_ENV = process.env.NODE_ENV || config.node_env;
